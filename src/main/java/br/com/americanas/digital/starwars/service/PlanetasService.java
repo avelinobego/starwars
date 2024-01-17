@@ -3,13 +3,11 @@ package br.com.americanas.digital.starwars.service;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-import org.springframework.aot.generate.GeneratedClass;
 import org.springframework.stereotype.Service;
 
-import br.com.americanas.digital.starwars.entities.Filme;
 import br.com.americanas.digital.starwars.entities.Planeta;
-import br.com.americanas.digital.starwars.repository.PlanetasRepository;
 import br.com.americanas.digital.starwars.repository.LocalPlanetasRepository;
+import br.com.americanas.digital.starwars.repository.PlanetasRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -27,10 +25,6 @@ public class PlanetasService {
         this.apiRepository = apiRepository;
         this.planetasRepository = planetasRepository;
         this.sequenceService = sequenceService;
-    }
-
-    public Filme filme(String url) {
-        return null;
     }
 
     public Flux<Planeta> all() {

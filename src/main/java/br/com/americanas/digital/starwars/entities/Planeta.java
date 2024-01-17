@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public record Planeta(
+public record Planeta (
         @Id Long id,
         @TextIndexed String nome,
         String clima,

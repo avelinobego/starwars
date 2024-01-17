@@ -8,7 +8,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
-public class IdDeserializer extends StdDeserializer<Integer> {
+public class IdDeserializer extends StdDeserializer<Long> {
 
     private final Pattern pattern;
 
@@ -22,7 +22,7 @@ public class IdDeserializer extends StdDeserializer<Integer> {
     }
 
     @Override
-    public Integer deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JacksonException {
+    public Long deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JacksonException {
 
         var match = pattern.matcher(p.getText());
         StringBuilder result = new StringBuilder();
@@ -30,7 +30,7 @@ public class IdDeserializer extends StdDeserializer<Integer> {
             result.append(match.group(0));
         }
 
-        return Integer.valueOf(result.toString());
+        return Long.valueOf(result.toString());
 
     }
 
